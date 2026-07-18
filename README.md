@@ -64,3 +64,9 @@ npm run dev                          # http://localhost:3000
 Next.js (App Router) · `@d-id/client-sdk` · ElevenLabs Agents Platform · `@google/genai` (optional) · Tailwind CSS · TypeScript.
 
 Built for the D-ID × ElevenLabs hackathon.
+
+## License
+
+The source code is available under the [MIT License](LICENSE). D-ID,
+ElevenLabs, Gemini, and their respective SDKs and services remain subject to
+their own terms and licenses.
