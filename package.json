@@ -2,12 +2,14 @@
   "name": "seance",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "SÉANCE — a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "setup:agent": "node scripts/create-agent.mjs"
   },
   "dependencies": {
