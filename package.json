@@ -3,29 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "description": "SÉANCE — a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
+  "description": "S\u00c9ANCE \u2014 a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "setup:agent": "node scripts/create-agent.mjs"
   },
   "dependencies": {
     "@d-id/client-sdk": "^1.2.3",
     "@google/genai": "^1.0.0",
-    "next": "^15.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/node": "^24",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.0"
+  },
+  "overrides": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
