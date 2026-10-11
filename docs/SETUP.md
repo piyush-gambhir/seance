@@ -11,7 +11,7 @@ of things to verify against your live D-ID account.
 |----------|-----|-------|
 | **D-ID account, paid plan** | The avatar + the native ElevenLabs integration | Bring-your-own-ElevenLabs-key requires a paid plan. Get your API key at studio.d-id.com → API. |
 | **ElevenLabs account + an Agent** | The brain (STT + LLM + TTS + turn-taking) | Create the Esmé agent per [ESME_ELEVENLABS_CONFIG.md](ESME_ELEVENLABS_CONFIG.md). |
-| **Node 18+** | `npm run setup:agent` uses built-in `fetch` | |
+| **Node 24.21.0** | `npm run setup:agent` uses built-in `fetch` | |
 | **Gemini API key** *(optional)* | Structured object read for the prophecy card | Free at aistudio.google.com/apikey. App works without it. |
 | A laptop with a **webcam + mic**, on **Chrome** | The experience | Desktop Chrome is the most reliable for WebRTC + camera publishing. |
 

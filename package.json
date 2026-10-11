@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "description": "SÉANCE — a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
+  "description": "S\u00c9ANCE \u2014 a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,7 +20,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^24",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "autoprefixer": "^10.4.20",
@@ -33,5 +33,8 @@
   "overrides": {
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
