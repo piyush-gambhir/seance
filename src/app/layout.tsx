@@ -5,14 +5,14 @@ import "./globals.css";
 const display = Cinzel({
   subsets: ["latin"],
   weight: ["400", "600", "700", "900"],
-  variable: "--font-display",
+  variable: "--font-display-src",
   display: "swap",
 });
 
 const body = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-body-src",
   display: "swap",
 });
 

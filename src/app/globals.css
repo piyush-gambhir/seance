@@ -1,6 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0a0710;
+  --color-velvet: #160d20;
+  --color-plum: #2a1538;
+  --color-candle: #f5c97b;
+  --color-ember: #e8954a;
+  --color-gild: #c9a86a;
+  --color-bone: #efe6d4;
+  --color-blood: #7a1f2b;
+  --color-spirit: #9fd8d2;
+
+  --font-display: var(--font-display-src), Cinzel, Georgia, serif;
+  --font-body: var(--font-body-src), Georgia, serif;
+
+  --shadow-candle: 0 0 60px 10px rgba(245, 201, 123, 0.25);
+  --shadow-frame:
+    0 0 0 2px rgba(201, 168, 106, 0.6), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+
+  --animate-flicker: flicker 2.6s ease-in-out infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-rise: rise 0.6s ease-out both;
+  --animate-smoke: smoke 3.5s ease-out infinite;
+
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    45% {
+      opacity: 0.78;
+    }
+    55% {
+      opacity: 0.92;
+    }
+    70% {
+      opacity: 0.7;
+    }
+  }
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.06);
+      opacity: 0.85;
+    }
+  }
+  @keyframes rise {
+    0% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes smoke {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-120px) scale(1.6);
+      opacity: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   --ink: #0a0710;

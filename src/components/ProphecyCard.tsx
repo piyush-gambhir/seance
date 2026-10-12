@@ -89,13 +89,13 @@ export default function ProphecyCard({ data, onAgain }: Props) {
   }, [data]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-xs">
       <div className="flex max-h-full w-full max-w-md flex-col items-center gap-5 overflow-auto">
         <div
           ref={cardRef}
           className="parchment animate-rise w-full rounded-md border-2 border-[#5a3c14]/50 p-8 text-center"
         >
-          <p className="display text-sm tracking-[0.3em] text-[#7a1f2b]">· A PROPHECY ·</p>
+          <p className="display text-sm tracking-[0.3em] text-blood">· A PROPHECY ·</p>
           <p className="mt-1 text-xs italic text-[#6a4a1e]">
             as channeled through the haunted glass
           </p>
@@ -107,7 +107,7 @@ export default function ProphecyCard({ data, onAgain }: Props) {
               Omens read: {data.objects.join(" · ")}
             </p>
           )}
-          <p className="mt-5 display text-base tracking-[0.2em] text-[#7a1f2b]">
+          <p className="mt-5 display text-base tracking-[0.2em] text-blood">
             {data.sigil}
           </p>
           <p className="mt-6 display text-xs tracking-[0.3em] text-[#3a2a14]">

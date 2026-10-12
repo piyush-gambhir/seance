@@ -1,7 +1,7 @@
 /**
  * Thin wrapper around @d-id/client-sdk for the SÉANCE app.
  *
- * Architecture (verified against @d-id/client-sdk v1.2.3 + D-ID docs, 2026):
+ * Architecture (verified against @d-id/client-sdk v3.0.5 + D-ID docs, 2026):
  *   - We connect to a D-ID agent created via the NATIVE ElevenLabs integration
  *     (POST /v2/agents/integrations/elevenlabs). In that agent, ElevenLabs runs
  *     STT + LLM + TTS and D-ID lip-syncs the ElevenLabs voice onto a V4 avatar.
