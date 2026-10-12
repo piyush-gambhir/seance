@@ -11,7 +11,7 @@ export default function SeanceStage() {
   const s = useSeance();
 
   return (
-    <main className="room-bg vignette grain relative flex min-h-[100dvh] flex-col items-center overflow-hidden">
+    <main className="room-bg vignette grain relative flex min-h-dvh flex-col items-center overflow-hidden">
       {s.phase === "dormant" && <Intro onBegin={s.begin} />}
       {s.phase === "lost" && (
         <Lost
@@ -38,7 +38,7 @@ export default function SeanceStage() {
 
 function Intro({ onBegin }: { onBegin: () => void }) {
   return (
-    <div className="animate-rise relative z-10 flex min-h-[100dvh] flex-col items-center justify-center px-6 text-center">
+    <div className="animate-rise relative z-10 flex min-h-dvh flex-col items-center justify-center px-6 text-center">
       <p className="display text-xs tracking-[0.4em] text-gild/70">A HAUNTED PARLOR GAME</p>
       <h1 className="display text-glow mt-4 text-5xl font-black tracking-[0.18em] text-bone sm:text-7xl">
         SÉANCE
@@ -66,7 +66,7 @@ function Intro({ onBegin }: { onBegin: () => void }) {
 
 function Lost({ message, onRetry }: { message: string | null; onRetry: () => void }) {
   return (
-    <div className="animate-rise relative z-10 flex min-h-[100dvh] flex-col items-center justify-center px-6 text-center">
+    <div className="animate-rise relative z-10 flex min-h-dvh flex-col items-center justify-center px-6 text-center">
       <h2 className="display text-3xl tracking-[0.2em] text-blood/90">THE VEIL CLOSED</h2>
       <p className="mt-4 max-w-md text-lg text-bone/75">
         {message ?? "The spirits have withdrawn."}
@@ -84,7 +84,7 @@ function Stage({ s }: { s: ReturnType<typeof useSeance> }) {
   const showHint = s.phase === "present" && s.objectsPresented === 0 && !s.caption;
 
   return (
-    <div className="relative z-10 flex min-h-[100dvh] w-full max-w-2xl flex-col items-center justify-between px-4 py-6">
+    <div className="relative z-10 flex min-h-dvh w-full max-w-2xl flex-col items-center justify-between px-4 py-6">
       {/* top: meter */}
       <div className="flex w-full items-start justify-between">
         <div className="display text-[0.62rem] tracking-[0.3em] text-gild/60">SÉANCE</div>

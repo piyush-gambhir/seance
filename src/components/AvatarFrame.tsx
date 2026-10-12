@@ -38,7 +38,7 @@ export default function AvatarFrame({ stream, activity, phase }: Props) {
         }}
       />
       <div className={`gilt-frame ${talking ? "shadow-candle" : ""}`}>
-        <div className="gilt-frame__inner aspect-[3/4] w-[min(78vw,420px)]">
+        <div className="gilt-frame__inner aspect-3/4 w-[min(78vw,420px)]">
           {stream ? (
             <video
               ref={videoRef}

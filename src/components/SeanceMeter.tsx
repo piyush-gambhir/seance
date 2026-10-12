@@ -22,10 +22,10 @@ export default function SeanceMeter({ presented }: Props) {
                 }`}
               />
               <div
-                className={`h-10 w-2 rounded-sm transition-colors duration-500 ${
+                className={`h-10 w-2 rounded-xs transition-colors duration-500 ${
                   isLit
-                    ? "bg-gradient-to-b from-bone to-gild"
-                    : "bg-gradient-to-b from-plum to-velvet"
+                    ? "bg-linear-to-b from-bone to-gild"
+                    : "bg-linear-to-b from-plum to-velvet"
                 }`}
               />
             </div>
