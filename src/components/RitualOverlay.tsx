@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { RITUAL_INCANTATIONS } from "@/lib/prompts";
 
 interface Props {
@@ -14,12 +13,7 @@ interface Props {
  * before Esmé speaks. Latency, in costume.
  */
 export default function RitualOverlay({ active, pulse }: Props) {
-  const [whisper, setWhisper] = useState("");
-
-  useEffect(() => {
-    if (!active) return;
-    setWhisper(RITUAL_INCANTATIONS[pulse % RITUAL_INCANTATIONS.length]);
-  }, [active, pulse]);
+  const whisper = RITUAL_INCANTATIONS[pulse % RITUAL_INCANTATIONS.length];
 
   if (!active) return null;
 
