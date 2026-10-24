@@ -58,7 +58,9 @@ export function useSeance() {
   const camStreamRef = useRef<MediaStream | null>(null);
   const revealingRef = useRef(false); // true once user asked for the final prophecy
   const phaseRef = useRef<SeancePhase>("dormant");
-  phaseRef.current = state.phase;
+  useEffect(() => {
+    phaseRef.current = state.phase;
+  }, [state.phase]);
 
   // ── OPTIONAL: enrich the prophecy card with a structured object read. ──────
   const inspectObject = useCallback(async () => {
@@ -182,7 +184,7 @@ export function useSeance() {
           setState((s) => {
             const messages = [...s.messages, message].slice(-40);
             let caption = s.caption;
-            let objectsPresented = s.objectsPresented;
+            const objectsPresented = s.objectsPresented;
             let prophecy = s.prophecy;
             if (message.role === "assistant") {
               caption = message.content;
