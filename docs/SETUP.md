@@ -11,9 +11,18 @@ of things to verify against your live D-ID account.
 |----------|-----|-------|
 | **D-ID account, paid plan** | The avatar + the native ElevenLabs integration | Bring-your-own-ElevenLabs-key requires a paid plan. Get your API key at studio.d-id.com → API. |
 | **ElevenLabs account + an Agent** | The brain (STT + LLM + TTS + turn-taking) | Create the Esmé agent per [ESME_ELEVENLABS_CONFIG.md](ESME_ELEVENLABS_CONFIG.md). |
-| **Node 24.21.0** | `npm run setup:agent` uses built-in `fetch` | |
+| **Node 26.12.1 (local) or Node 24.22.1 (Vercel)** | `npm run setup:agent` uses built-in `fetch` | |
 | **Gemini API key** *(optional)* | Structured object read for the prophecy card | Free at aistudio.google.com/apikey. App works without it. |
 | A laptop with a **webcam + mic**, on **Chrome** | The experience | Desktop Chrome is the most reliable for WebRTC + camera publishing. |
+
+
+Local development uses Node 26.12.1 from `.node-version`. CI checks both Node
+24.22.1 and 26.12.1. Vercel currently supports Node 24, so the package engine
+range retains that hosting path. See [Vercel's supported versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
+
+`npm run typecheck` explicitly invokes the TypeScript 7 alias. TypeScript 6
+remains installed for ESLint's compiler API and Next.js's build check. Avoid
+bare `tsc` commands because both compiler packages expose that binary name.
 
 ---
 
