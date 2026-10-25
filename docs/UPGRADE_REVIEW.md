@@ -22,7 +22,8 @@ The newer upstream Next.js security release and Zod override are preserved.
 
 - Node 26.12.1: clean `npm ci`, lint, explicit TypeScript 7 check and production
   build pass. Node 24.22.1: lint, explicit TypeScript 7 check and production
-  build pass.
+  build pass. Both versions also pass the explicit TypeScript 6 compatibility
+  check before build in CI.
 - `npm audit` and `npm audit --omit=dev`: zero reported vulnerabilities.
 - Local production browser checks pass with external requests blocked:
   homepage hydration, fake camera/microphone capture reaching the missing

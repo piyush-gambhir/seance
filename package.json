@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "node node_modules/typescript7/bin/tsc --noEmit",
-    "setup:agent": "node scripts/create-agent.mjs"
+    "setup:agent": "node scripts/create-agent.mjs",
+    "typecheck:compat": "node node_modules/typescript/bin/tsc --noEmit"
   },
   "dependencies": {
     "@d-id/client-sdk": "^3.0.8",
