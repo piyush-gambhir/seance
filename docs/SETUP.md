@@ -16,7 +16,7 @@ of things to verify against your live D-ID account.
 | A laptop with a **webcam + mic**, on **Chrome** | The experience | Desktop Chrome is the most reliable for WebRTC + camera publishing. |
 
 
-Local development uses Node 26.12.1 from `.node-version`. CI checks both Node
+Local development uses Node 26.12.1 from `.nvmrc`. CI checks both Node
 24.22.1 and 26.12.1. Vercel currently supports Node 24, so the package engine
 range retains that hosting path. See [Vercel's supported versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 
