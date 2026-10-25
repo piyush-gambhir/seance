@@ -32,3 +32,15 @@ jobs:
       - run: npm run typecheck
       - run: npm run typecheck:compat
       - run: npm run build
+
+  required-check:
+    name: check
+    needs: check
+    if: always()
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 1
+    steps:
+      - name: Require both runtime checks
+        env:
+          RESULT: ${{ needs.check.result }}
+        run: test "$RESULT" = success
