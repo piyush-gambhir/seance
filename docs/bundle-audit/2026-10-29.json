@@ -1,0 +1,305 @@
+{
+  "date": "2026-10-29",
+  "repository": "piyush-gambhir/seance",
+  "base": "main",
+  "base_sha": "1ce5aaabb78b77aa282d8bd895cb2d99c050bc62",
+  "mode": "audit",
+  "publication_blocker": null,
+  "apps": [
+    {
+      "path": ".",
+      "declared_next": "16.4.3",
+      "installed_next": "16.4.3",
+      "snapshot": "audit-20261029-baseline",
+      "graph_sha256": "226535e703e83a81b3dcbdc1c21508c0c55316d3cfe522adf577b1d02920aa6e",
+      "error": null,
+      "analysis": {
+        "meta": {
+          "type": "meta",
+          "schema_version": 1,
+          "snapshot_name": "audit-20261029-baseline",
+          "module_index_hash": "c9d30e5c1ac11719",
+          "route_count": 4,
+          "selected_routes": 4
+        },
+        "record_counts": {
+          "meta": 1,
+          "module": 1155,
+          "route": 4,
+          "output": 544,
+          "part": 1763,
+          "group": 35
+        },
+        "metric": "Sum of attributed compressed bytes for JavaScript outputs with [client-fs] provenance; includes deferred outputs and is not measured transfer or initial-load size.",
+        "unique_client_js_compressed_attribution": 367311,
+        "route_stats": [
+          {
+            "route": "/",
+            "client_js_compressed_attribution": 367311,
+            "bootstrap_js_compressed_attribution": 164090,
+            "client_js_files": 10,
+            "entries_coverage": "exact",
+            "groups_coverage": "exact"
+          },
+          {
+            "route": "/_not-found",
+            "client_js_compressed_attribution": 210061,
+            "bootstrap_js_compressed_attribution": 164090,
+            "client_js_files": 6,
+            "entries_coverage": "exact",
+            "groups_coverage": "exact"
+          },
+          {
+            "route": "/api/did-credentials",
+            "client_js_compressed_attribution": 0,
+            "bootstrap_js_compressed_attribution": 0,
+            "client_js_files": 0,
+            "entries_coverage": "exact",
+            "groups_coverage": "exact"
+          },
+          {
+            "route": "/api/vision",
+            "client_js_compressed_attribution": 0,
+            "bootstrap_js_compressed_attribution": 0,
+            "client_js_files": 0,
+            "entries_coverage": "exact",
+            "groups_coverage": "exact"
+          }
+        ],
+        "top_sources": [
+          {
+            "source": "node_modules/@d-id/client-sdk/dist/livekit-client.esm-CxTfqbSV.js",
+            "compressed_attribution": 128859,
+            "routes": ["/"]
+          },
+          {
+            "source": "node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.production.js",
+            "compressed_attribution": 63931,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/build/polyfills/polyfill-nomodule.js",
+            "compressed_attribution": 39434,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/@d-id/client-sdk/dist/index-DseK6tm4.js",
+            "compressed_attribution": 15563,
+            "routes": ["/"]
+          },
+          {
+            "source": "node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.production.js",
+            "compressed_attribution": 7776,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/segment-cache/cache.js",
+            "compressed_attribution": 6406,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/@d-id/client-sdk/dist/livekit-manager-BKu4kohO.js",
+            "compressed_attribution": 5176,
+            "routes": ["/"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/render-tree.js",
+            "compressed_attribution": 3997,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/segment-cache/scheduler.js",
+            "compressed_attribution": 3968,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/compiled/react/cjs/react.production.js",
+            "compressed_attribution": 2970,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/lib/constants.js",
+            "compressed_attribution": 2299,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js",
+            "compressed_attribution": 2177,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "[turbopack]/shared/runtime/runtime-utils.ts",
+            "compressed_attribution": 2156,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/app-router.js",
+            "compressed_attribution": 2123,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/layout-router.js",
+            "compressed_attribution": 2010,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/segment-cache/optimistic-routes.js",
+            "compressed_attribution": 1971,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/segment-cache/decode-server-response.js",
+            "compressed_attribution": 1951,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/app-router-state.js",
+            "compressed_attribution": 1950,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+            "compressed_attribution": 1943,
+            "routes": ["/", "/_not-found"]
+          },
+          {
+            "source": "src/lib/useSeance.ts",
+            "compressed_attribution": 1600,
+            "routes": ["/"]
+          }
+        ],
+        "top_packages": [
+          ["next", 205061],
+          ["@d-id/client-sdk", 149598],
+          ["(application)", 12255],
+          ["@swc/helpers", 397]
+        ],
+        "duplicate_browser_versions": {},
+        "graph": {
+          "emitted_members": 162,
+          "sync_edges": 502,
+          "async_edges": 2,
+          "communities": 6,
+          "parameters": "NetworkX Louvain, resolution=1, weight=1 per distinct directed edge/kind before symmetrization, seed=0; seed=1 stability comparison.",
+          "stable_partition_across_seeds": false,
+          "ranked_communities": [
+            {
+              "community": 3,
+              "modules": 4,
+              "unambiguous_compressed_attribution": 149598,
+              "largest_packages": [["@d-id/client-sdk", 149598]]
+            },
+            {
+              "community": 4,
+              "modules": 30,
+              "unambiguous_compressed_attribution": 83234,
+              "largest_packages": [["next", 83234]]
+            },
+            {
+              "community": 2,
+              "modules": 44,
+              "unambiguous_compressed_attribution": 39587,
+              "largest_packages": [["next", 39587]]
+            },
+            {
+              "community": 5,
+              "modules": 59,
+              "unambiguous_compressed_attribution": 28536,
+              "largest_packages": [
+                ["next", 26596],
+                ["(application)", 1543],
+                ["@swc/helpers", 397]
+              ]
+            },
+            {
+              "community": 1,
+              "modules": 20,
+              "unambiguous_compressed_attribution": 15079,
+              "largest_packages": [["next", 15079]]
+            },
+            {
+              "community": 0,
+              "modules": 5,
+              "unambiguous_compressed_attribution": 1131,
+              "largest_packages": [["next", 1131]]
+            }
+          ],
+          "unmapped_or_ambiguous_compressed_attribution": 50146
+        },
+        "candidates": [
+          {
+            "package": "@d-id/client-sdk",
+            "unique_compressed_attribution": 149598,
+            "route": "/",
+            "roots": [
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/app-next-turbopack.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/client-page.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/client-segment.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/http-access-fallback/error-boundary.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/next@16.4.3_@babel+core@7.29.7_supports-color@7.2.0__@types+node@26.6.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/lib/metadata/generate/icon-mark.js [app-client] (ecmascript)",
+              "[project]/src/components/SeanceStage.tsx [app-client] (ecmascript)"
+            ],
+            "targets": [
+              "[project]/node_modules/.pnpm/@d-id+client-sdk@3.0.8_@types+dom-mediacapture-record@1.0.22/node_modules/@d-id/client-sdk/dist/index-DseK6tm4.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/@d-id+client-sdk@3.0.8_@types+dom-mediacapture-record@1.0.22/node_modules/@d-id/client-sdk/dist/index.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/@d-id+client-sdk@3.0.8_@types+dom-mediacapture-record@1.0.22/node_modules/@d-id/client-sdk/dist/livekit-client.esm-CxTfqbSV.js [app-client] (ecmascript)",
+              "[project]/node_modules/.pnpm/@d-id+client-sdk@3.0.8_@types+dom-mediacapture-record@1.0.22/node_modules/@d-id/client-sdk/dist/livekit-manager-BKu4kohO.js [app-client] (ecmascript)"
+            ],
+            "missing_roots": 0,
+            "status": "provisional; render optionality and browser timing are unverified",
+            "cut": [],
+            "cut_status": "No synchronous root-to-target path in the known emitted subgraph; inspect async or render-dependent triggers."
+          }
+        ],
+        "client_dependency_scan": [],
+        "possible_server_only_leaks": [],
+        "suppressed_matches": [],
+        "coverage": {
+          "unsupported_client_js_outputs": [],
+          "unknown_route_entries": [],
+          "unknown_route_groups": [],
+          "groups_without_joined_trigger": 0,
+          "sync_dependencies_absent_from_emitted_subgraph": 5,
+          "attribution_conflicts": 0,
+          "action_like_identities_requiring_source_mapping": 2,
+          "limits": [
+            "All minimum cuts are provisional; optionality, module side effects and actual mount/preload timing have not been behavior-tested.",
+            "Source-to-output attribution is distinct from exact module identity; ambiguous community bytes are excluded from community ranking.",
+            "No production browser requests, cold-navigation timing, interaction timing, Web Vitals or emitted implementation contents were inspected.",
+            "Potential Server Action stubs and ownership matches remain unverified until source-to-reference mapping and emitted contents are inspected."
+          ]
+        }
+      }
+    }
+  ],
+  "verification": [
+    {
+      "app": ".",
+      "command": "pnpm exec next typegen",
+      "exit_code": 0,
+      "seconds": 0.4
+    },
+    {
+      "app": ".",
+      "command": "pnpm run typecheck",
+      "exit_code": 0,
+      "seconds": 0.4
+    },
+    {
+      "app": ".",
+      "command": "pnpm run lint",
+      "exit_code": 0,
+      "seconds": 2.2
+    },
+    {
+      "app": "(repository)",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "seconds": 0.0
+    }
+  ]
+}
