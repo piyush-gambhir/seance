@@ -33,3 +33,6 @@ yarn-error.log*
 
 # local agent artifacts
 /.seance-agent.json
+
+# Local bundle graph exports
+/.bundle-analysis/

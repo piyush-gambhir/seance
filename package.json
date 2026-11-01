@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "description": "S\u00c9ANCE \u2014 a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
+  "description": "SÉANCE \u2014 a haunted-object reader. A Victorian ghost medium (D-ID V4 avatar + ElevenLabs Agents brain) channels the 'spirit story' of any object you hold up to your webcam, and reacts to your face in real time.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +11,9 @@
     "lint": "eslint .",
     "typecheck": "node node_modules/typescript7/bin/tsc --noEmit",
     "setup:agent": "node scripts/create-agent.mjs",
-    "typecheck:compat": "node node_modules/typescript/bin/tsc --noEmit"
+    "typecheck:compat": "node node_modules/typescript/bin/tsc --noEmit",
+    "bundle:analyze": "next analyze --output",
+    "bundle:export": "next analyze export"
   },
   "dependencies": {
     "@d-id/client-sdk": "^3.0.8",
@@ -38,6 +40,6 @@
     "zod@>=4.0.0 <4.6.7": "4.6.7"
   },
   "engines": {
-    "node": ">=24.22.1 <25 || >=26.12.1 <27"
+    "node": "26.x"
   }
 }
