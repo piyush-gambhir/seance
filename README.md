@@ -4,6 +4,8 @@
 
 SÉANCE is a webcam-first parlor game where the entire mechanic is a character who genuinely **sees what you show her** and **reacts to how you take it**. It's built for one of those "wait, how did it know that?" moments you immediately want to share.
 
+![The SÉANCE title screen: the gilt SÉANCE wordmark, an invitation from Madame Esmé Voss, and a gold "Begin the séance" button on a dark velvet parlor background](docs/images/intro.png)
+
 It's a showcase of **D-ID expressive avatars** + **ElevenLabs Agents** working as one:
 
 | Trait | How SÉANCE delivers it |
@@ -35,6 +37,12 @@ It's a showcase of **D-ID expressive avatars** + **ElevenLabs Agents** working a
 - The browser only talks to **`@d-id/client-sdk`** — D-ID bridges the audio to ElevenLabs server-side, so there's no fragile client audio relay.
 - A thin client layer adds the **séance theatre**: a motion detector that fires the "channeling" ritual the instant you hold something up, the candle meter, captions, and a downloadable **prophecy card**.
 - **Optional**: a Gemini vision route adds a structured object read to label the prophecy card. The app runs fine without it.
+
+<p align="center">
+  <img src="docs/images/summoning.png" alt="The séance stage while Esmé is being summoned: an empty gilt looking-glass with a faint spirit glow, the unlit candle meter reading 0 / 3 omens read, and the self-view slot below" width="400">
+  <br>
+  <sub>The stage mid-summon, a moment before Esmé appears in the gilt looking-glass. The candles light as she reads each object.</sub>
+</p>
 
 ---
 
