@@ -6,7 +6,7 @@ interface Props {
   presented: number;
 }
 
-/** A row of candles that light as objects are read; full = prophecy unlocked. */
+
 export default function SeanceMeter({ presented }: Props) {
   const lit = Math.min(presented, OBJECTS_TO_PROPHECY);
   return (

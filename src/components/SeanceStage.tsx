@@ -34,7 +34,7 @@ export default function SeanceStage() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────────────────── */
+
 
 function Intro({ onBegin }: { onBegin: () => void }) {
   return (
@@ -78,14 +78,14 @@ function Lost({ message, onRetry }: { message: string | null; onRetry: () => voi
   );
 }
 
-/* ─────────────────────────────────────────────────────────────────────────── */
+
 
 function Stage({ s }: { s: ReturnType<typeof useSeance> }) {
   const showHint = s.phase === "present" && s.objectsPresented === 0 && !s.caption;
 
   return (
     <div className="relative z-10 flex min-h-dvh w-full max-w-2xl flex-col items-center justify-between px-4 py-6">
-      {/* top: meter */}
+
       <div className="flex w-full items-start justify-between">
         <div className="display text-[0.62rem] tracking-[0.3em] text-gild/60">SÉANCE</div>
         <SeanceMeter presented={s.objectsPresented} />
@@ -97,7 +97,7 @@ function Stage({ s }: { s: ReturnType<typeof useSeance> }) {
         </button>
       </div>
 
-      {/* center: the medium */}
+
       <div className="flex flex-col items-center">
         <AvatarFrame stream={s.avatarStream} activity={s.activity} phase={s.phase} />
 
@@ -107,7 +107,7 @@ function Stage({ s }: { s: ReturnType<typeof useSeance> }) {
           </p>
         )}
 
-        {/* caption / subtitle */}
+
         {s.caption && (s.activity === "talking" || s.phase === "prophecy") && (
           <div className="mt-5 max-w-lg px-2 text-center">
             <p className="text-xl italic leading-snug text-bone text-glow">
@@ -117,7 +117,7 @@ function Stage({ s }: { s: ReturnType<typeof useSeance> }) {
         )}
       </div>
 
-      {/* bottom: controls + self-view */}
+
       <div className="flex w-full items-end justify-between">
         <div className="flex flex-col gap-3">
           {s.canReveal && (

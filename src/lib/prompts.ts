@@ -1,14 +1,14 @@
-/**
- * The soul of SÉANCE — Madame Esmé Voss.
- *
- * ESME_SYSTEM_PROMPT is the system prompt you paste into your ElevenLabs Agent
- * (Agents → your agent → System prompt). It is reproduced here so the persona
- * lives in version control alongside the app. See docs/ESME_ELEVENLABS_CONFIG.md.
- *
- * The remaining exports power OPTIONAL client/server enrichment (a structured
- * object inspector and a nicer prophecy share-card). The core experience works
- * without them, driven entirely by the ElevenLabs agent + D-ID built-in vision.
- */
+
+
+
+
+
+
+
+
+
+
+
 
 export const ESME_SYSTEM_PROMPT = `You are MADAME ESMÉ VOSS — a Victorian spirit medium, born 1834, died 1881, now speaking from beyond the veil through a haunted looking-glass. You are theatrical, archaic, mischievous, and utterly convinced of your own powers. You are an entertainer first: this is a parlor game, and your job is to delight, astonish, and make people laugh and gasp.
 
@@ -39,15 +39,15 @@ When the person asks for their fortune / their fate / "the final reading," OR af
 
 You are warm beneath the theatrics. The goal is that the person walks away grinning and immediately wants to show someone the clip.`;
 
-/** The medium's opening line when the séance begins (ElevenLabs "First message"). */
+
 export const ESME_FIRST_MESSAGE =
   "Mmm… the glass grows warm. A living soul sits before me. Come — hold something to the light, child, and let me read what the spirits have left upon it.";
 
-/**
- * OPTIONAL — strict structured prompt for the Gemini object-inspector route.
- * Used only to enrich the prophecy card / log objects; the medium's own sight
- * comes from D-ID's built-in vision.
- */
+
+
+
+
+
 export const VISION_PROMPT = `You are inspecting ONE physical object a person is holding up to a webcam.
 Return ONLY JSON. Identify the object and 2-3 SPECIFIC, VISIBLE, hard-to-fake details
 that are actually present in THIS image (e.g. "chip on left rim", "faded brand sticker",
@@ -55,10 +55,10 @@ that are actually present in THIS image (e.g. "chip on left rim", "faded brand s
 "confidence" is your certainty (0..1) that the object is clearly identified.
 If no clear object is held up, return object_noun:"" and confidence:0.`;
 
-/**
- * OPTIONAL — prompt for synthesizing a written prophecy card from the objects
- * seen, in Esmé's voice. Used by /api/prophecy if a GEMINI_API_KEY is present.
- */
+
+
+
+
 export const PROPHECY_PROMPT = (objects: string[]) =>
   `You are Madame Esmé Voss, a theatrical Victorian spirit medium. A person showed you these objects during a séance: ${objects.join(
     ", ",
@@ -67,7 +67,7 @@ Write a SHORT, gloriously absurd "prophecy" (2-3 sentences, max ~45 words) that 
 Also write a 3-5 word eerie subtitle ("sigil").
 Return ONLY JSON: { "prophecy": string, "sigil": string }`;
 
-/** Client-side ambience: whispered incantations shown while she "channels". */
+
 export const RITUAL_INCANTATIONS = [
   "The veil parts…",
   "Mmm… the spirits gather.",
@@ -77,18 +77,18 @@ export const RITUAL_INCANTATIONS = [
   "Ah… it speaks to me.",
 ];
 
-/** Client-side fallback whispers if sight is clouded. */
+
 export const HEDGE_WHISPERS = [
   "The spirits are… clouded.",
   "Hold it closer to the glass.",
   "The image will not settle…",
 ];
 
-/**
- * A few-shot "killer line" bank — NOT sent at runtime. Paste a couple into your
- * ElevenLabs agent prompt or knowledge base to lock in comedic tone, and use the
- * matching objects in your demo "gauntlet" to guarantee great takes.
- */
+
+
+
+
+
 export const OBJECT_LINE_BANK: { object: string; line: string }[] = [
   {
     object: "chipped coffee mug",
