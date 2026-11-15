@@ -1,24 +1,24 @@
 #!/usr/bin/env node
-/**
- * One-shot setup: create the D-ID agent bound to your ElevenLabs Agent
- * (D-ID's native ElevenLabs integration, with built-in vision enabled).
- *
- *   1. POST /secrets                         → store your ElevenLabs key, get secret_id
- *   2. POST /v2/agents/integrations/elevenlabs → create the avatar agent
- *   3. GET  /agents/{id}                      → poll until ready
- *   4. print DID_AGENT_ID + DID_CLIENT_KEY    → paste into .env.local
- *
- * Run:  npm run setup:agent
- *
- * Requires in .env.local (or the environment):
- *   DID_API_KEY, ELEVENLABS_API_KEY, ELEVENLABS_AGENT_ID
- * Optional:
- *   DID_PRESENTER_ID (defaults to a public expressive presenter)
- *
- * NOTE: D-ID's docs and OpenAPI schema disagree slightly on the /secrets body
- * for ElevenLabs, so this script tries a couple of shapes and uses whichever the
- * live API accepts. The native ElevenLabs integration requires a paid D-ID plan.
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -28,7 +28,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const DID = "https://api.d-id.com";
 
-// ── load .env.local (no dependency) ──────────────────────────────────────────
+
 loadEnv(resolve(ROOT, ".env.local"));
 loadEnv(resolve(ROOT, ".env"));
 
@@ -50,11 +50,11 @@ main().catch((e) => {
 async function main() {
   console.log("🔮 Summoning the medium…\n");
 
-  // 1) Store the ElevenLabs key in D-ID's secret vault.
+
   const secretId = await createSecret();
   console.log(`✓ ElevenLabs key stored as secret: ${secretId}`);
 
-  // 2) Create the avatar agent bound to the ElevenLabs agent, vision on.
+
   const body = {
     preview_name: "Madame Esmé Voss",
     presenter: { type: "expressive", presenter_id: PRESENTER_ID },
@@ -75,11 +75,11 @@ async function main() {
   }
   console.log(`✓ Agent created: ${agentId}`);
 
-  // 3) Poll for readiness (the idle video must render). Tolerate absent status.
+
   await waitReady(agentId);
   console.log("✓ The medium has manifested.\n");
 
-  // 4) Persist + print.
+
   const out = { DID_AGENT_ID: agentId, DID_CLIENT_KEY: clientKey };
   writeFileSync(resolve(ROOT, ".seance-agent.json"), JSON.stringify(out, null, 2));
 
@@ -96,10 +96,10 @@ async function main() {
   );
 }
 
-// ── steps ────────────────────────────────────────────────────────────────────
+
 
 async function createSecret() {
-  // Try the OpenAPI-schema shape first, then the quickstart-prose shape.
+
   const variants = [
     {
       type: "api_key",
@@ -140,7 +140,7 @@ async function waitReady(agentId, attempts = 40, delayMs = 3000) {
   console.warn("\n  (Timed out waiting for status:done — it may still be usable.)");
 }
 
-// ── http helpers ─────────────────────────────────────────────────────────────
+
 
 async function postJson(url, body) {
   const res = await fetch(url, {
@@ -171,7 +171,7 @@ async function parse(res, url) {
   return json;
 }
 
-// ── misc ─────────────────────────────────────────────────────────────────────
+
 
 function need(name) {
   const v = process.env[name];
@@ -188,7 +188,7 @@ function loadEnv(path) {
   try {
     raw = readFileSync(path, "utf8");
   } catch {
-    return; // file optional
+    return;
   }
   for (const line of raw.split("\n")) {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);

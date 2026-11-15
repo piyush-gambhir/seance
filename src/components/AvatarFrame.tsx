@@ -9,7 +9,7 @@ interface Props {
   phase: SeancePhase;
 }
 
-/** The gilt-framed looking-glass the medium appears within. */
+
 export default function AvatarFrame({ stream, activity, phase }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -18,7 +18,7 @@ export default function AvatarFrame({ stream, activity, phase }: Props) {
     if (v && stream && v.srcObject !== stream) {
       v.srcObject = stream;
       v.play().catch(() => {
-        /* a user gesture already started the séance; autoplay should be allowed */
+
       });
     }
   }, [stream]);
@@ -28,7 +28,7 @@ export default function AvatarFrame({ stream, activity, phase }: Props) {
 
   return (
     <div className="relative">
-      {/* candle glow that intensifies while she speaks */}
+
       <div
         className="pointer-events-none absolute -inset-10 rounded-full blur-3xl transition-opacity duration-700"
         style={{
@@ -58,7 +58,7 @@ export default function AvatarFrame({ stream, activity, phase }: Props) {
             </div>
           )}
 
-          {/* a faint scrying shimmer over the glass */}
+
           <div
             className="pointer-events-none absolute inset-0 mix-blend-screen"
             style={{
@@ -67,14 +67,14 @@ export default function AvatarFrame({ stream, activity, phase }: Props) {
             }}
           />
 
-          {/* channeling veil */}
+
           {channeling && (
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_60%,rgba(42,21,56,0.1),rgba(10,7,16,0.55))] transition-opacity" />
           )}
         </div>
       </div>
 
-      {/* speaking indicator */}
+
       <div className="mt-4 flex items-center justify-center gap-2 text-[0.7rem] tracking-[0.25em] text-gild/80 display">
         <span
           className={`inline-block h-1.5 w-1.5 rounded-full ${

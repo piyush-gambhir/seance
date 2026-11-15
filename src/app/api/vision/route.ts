@@ -5,19 +5,19 @@ import type { ObjectVerdict } from "@/lib/types";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-/**
- * OPTIONAL structured object inspector.
- *
- * Esmé's real "sight" comes from D-ID's built-in vision (it samples the camera
- * track we publish and feeds visual context into the ElevenLabs conversation).
- * This endpoint is a separate, best-effort enrichment that returns a STRUCTURED
- * read of the held-up object so we can label the prophecy share-card. The app
- * works without it: if GEMINI_API_KEY is unset, this returns 501 and the client
- * silently skips it.
- *
- * The provider lives in one function (`analyze`) so you can swap Gemini for
- * OpenAI/Anthropic by editing only that block.
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 export async function POST(req: NextRequest) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// ── Provider: Google Gemini (free tier; schema-enforced JSON). ───────────────
+
 async function analyze(base64Jpeg: string, apiKey: string): Promise<ObjectVerdict> {
   const { GoogleGenAI, Type } = await import("@google/genai");
   const ai = new GoogleGenAI({ apiKey });

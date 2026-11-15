@@ -8,10 +8,10 @@ interface Props {
   onAgain: () => void;
 }
 
-/**
- * The shareable artifact: the medium's final prophecy on a parchment card,
- * downloadable as a PNG (a second surface beyond the video clip).
- */
+
+
+
+
 export default function ProphecyCard({ data, onAgain }: Props) {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +24,7 @@ export default function ProphecyCard({ data, onAgain }: Props) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // parchment
+
     const g = ctx.createRadialGradient(W * 0.35, Hc * 0.1, 80, W * 0.5, Hc * 0.5, Hc);
     g.addColorStop(0, "#f5ead0");
     g.addColorStop(0.6, "#e7d3a6");
@@ -32,7 +32,7 @@ export default function ProphecyCard({ data, onAgain }: Props) {
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, Hc);
 
-    // border
+
     ctx.strokeStyle = "rgba(90,60,20,0.55)";
     ctx.lineWidth = 6;
     ctx.strokeRect(40, 40, W - 80, Hc - 80);
@@ -49,12 +49,12 @@ export default function ProphecyCard({ data, onAgain }: Props) {
     ctx.fillStyle = "#6a4a1e";
     ctx.fillText("as channeled through the haunted glass", W / 2, 230);
 
-    // prophecy body, wrapped
+
     ctx.fillStyle = "#2a1d0c";
     ctx.font = "500 46px Cormorant Garamond, Georgia, serif";
     wrapText(ctx, `“${data.prophecy}”`, W / 2, 420, W - 220, 60);
 
-    // objects
+
     if (data.objects.length) {
       ctx.font = "italic 26px Cormorant Garamond, Georgia, serif";
       ctx.fillStyle = "#6a4a1e";
@@ -68,12 +68,12 @@ export default function ProphecyCard({ data, onAgain }: Props) {
       );
     }
 
-    // sigil
+
     ctx.font = "700 30px Cinzel, Georgia, serif";
     ctx.fillStyle = "#7a1f2b";
     ctx.fillText(data.sigil.toUpperCase(), W / 2, Hc - 200);
 
-    // footer
+
     ctx.font = "600 22px Cinzel, Georgia, serif";
     ctx.fillStyle = "#3a2a14";
     ctx.fillText("S É A N C E", W / 2, Hc - 130);

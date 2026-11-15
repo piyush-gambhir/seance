@@ -11,7 +11,7 @@ import type {
   SeancePhase,
 } from "./types";
 
-/** Objects needed to fill the séance meter before the grand prophecy unlocks. */
+
 export const OBJECTS_TO_PROPHECY = 3;
 
 interface SeanceState {
@@ -56,13 +56,13 @@ export function useSeance() {
   const camVideoRef = useRef<HTMLVideoElement | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
   const camStreamRef = useRef<MediaStream | null>(null);
-  const revealingRef = useRef(false); // true once user asked for the final prophecy
+  const revealingRef = useRef(false);
   const phaseRef = useRef<SeancePhase>("dormant");
   useEffect(() => {
     phaseRef.current = state.phase;
   }, [state.phase]);
 
-  // ── OPTIONAL: enrich the prophecy card with a structured object read. ──────
+
   const inspectObject = useCallback(async () => {
     const video = camVideoRef.current;
     if (!video) return;
@@ -74,7 +74,7 @@ export function useSeance() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image }),
       });
-      if (!res.ok) return; // vision is optional; silently skip
+      if (!res.ok) return;
       const verdict = (await res.json()) as { object_noun?: string; confidence?: number };
       if (verdict.object_noun && (verdict.confidence ?? 0) >= 0.45) {
         setState((s) =>
@@ -84,11 +84,11 @@ export function useSeance() {
         );
       }
     } catch {
-      /* vision disabled or offline — fine */
+
     }
   }, []);
 
-  // ── A new object was held up and held still. ──────────────────────────────
+
   const onObjectPresented = useCallback(() => {
     if (phaseRef.current === "dormant" || phaseRef.current === "lost") return;
     setState((s) => ({
@@ -100,12 +100,12 @@ export function useSeance() {
     void inspectObject();
   }, [inspectObject]);
 
-  // ── Connect to the medium. ────────────────────────────────────────────────
+
   const begin = useCallback(async () => {
     if (sessionRef.current) return;
     patch({ phase: "summoning", error: null });
 
-    // 1) Permissions + local media.
+
     let cam: MediaStream;
     let mic: MediaStream;
     try {
@@ -125,7 +125,7 @@ export function useSeance() {
     camStreamRef.current = cam;
     micStreamRef.current = mic;
 
-    // Internal video element purely for motion sampling.
+
     const v = document.createElement("video");
     v.muted = true;
     v.playsInline = true;
@@ -135,10 +135,10 @@ export function useSeance() {
     try {
       await v.play();
     } catch {
-      /* autoplay of a muted local stream rarely fails */
+
     }
 
-    // 2) Fetch agent credentials (kept out of the static bundle).
+
     let creds: DidCredentials;
     try {
       const res = await fetch("/api/did-credentials");
@@ -154,7 +154,7 @@ export function useSeance() {
       return;
     }
 
-    // 3) Connect the medium.
+
     const session = new MediumSession();
     sessionRef.current = session;
     try {
@@ -188,7 +188,7 @@ export function useSeance() {
             let prophecy = s.prophecy;
             if (message.role === "assistant") {
               caption = message.content;
-              // Capture the grand prophecy text once the user has asked for it.
+
               if (revealingRef.current && message.final && !prophecy) {
                 prophecy = {
                   prophecy: message.content,
@@ -208,21 +208,21 @@ export function useSeance() {
       return;
     }
 
-    // 4) Publish mic + camera (mic → ElevenLabs; camera → D-ID built-in vision).
+
     try {
       await session.publishLocalMedia(cam, mic);
     } catch (e) {
       console.warn("[seance] publishLocalMedia", e);
     }
 
-    // 5) Expose self-view + start motion detection.
+
     patch({ phase: "present", cameraStream: cam });
     const motion = new MotionWatcher();
     motionRef.current = motion;
     motion.start(v, onObjectPresented);
   }, [patch, onObjectPresented]);
 
-  // ── Ask Esmé for the grand finale. ────────────────────────────────────────
+
   const reveal = useCallback(() => {
     revealingRef.current = true;
     patch({ phase: "prophecy" });
@@ -231,10 +231,10 @@ export function useSeance() {
     );
   }, [patch]);
 
-  /** Manual "stop talking". */
+
   const hush = useCallback(() => sessionRef.current?.interrupt(), []);
 
-  // ── Teardown. ─────────────────────────────────────────────────────────────
+
   const end = useCallback(() => {
     motionRef.current?.stop();
     motionRef.current = null;

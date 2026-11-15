@@ -7,11 +7,11 @@ interface Props {
   pulse: number;
 }
 
-/**
- * The "channeling" beat — drifting ectoplasm wisps and a whispered incantation
- * that appears the instant a new object is presented, covering the brief moment
- * before Esmé speaks. Latency, in costume.
- */
+
+
+
+
+
 export default function RitualOverlay({ active, pulse }: Props) {
   const whisper = RITUAL_INCANTATIONS[pulse % RITUAL_INCANTATIONS.length];
 
@@ -19,7 +19,7 @@ export default function RitualOverlay({ active, pulse }: Props) {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-30 flex items-end justify-center">
-      {/* rising wisps */}
+
       {[0, 1, 2, 3, 4].map((i) => (
         <span
           key={`${pulse}-${i}`}
@@ -31,7 +31,7 @@ export default function RitualOverlay({ active, pulse }: Props) {
           }}
         />
       ))}
-      {/* whisper */}
+
       <div
         key={pulse}
         className="absolute top-[14%] animate-rise text-center"

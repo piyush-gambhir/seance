@@ -1,24 +1,24 @@
-/**
- * MotionWatcher — a tiny, dependency-free "something was just held up to the
- * camera and held still" detector.
- *
- * It downsamples the local camera <video> to a 32×24 grayscale buffer a few
- * times a second and watches the mean frame-to-frame difference. A burst of
- * motion that then SETTLES (object presented and held steady) fires `onPresent`
- * once. This drives the candle-flare + "channeling" ritual the instant a new
- * object appears — independent of, and faster than, the server-side vision loop.
- */
+
+
+
+
+
+
+
+
+
+
 
 export interface MotionOptions {
-  /** diff level that counts as "movement happening" (0..1). */
+
   enterThreshold?: number;
-  /** diff level that counts as "now holding still" (0..1). */
+
   settleThreshold?: number;
-  /** consecutive calm ticks required to declare "presented". */
+
   settleTicks?: number;
-  /** ms to ignore further detections after one fires. */
+
   cooldownMs?: number;
-  /** sampling rate. */
+
   fps?: number;
 }
 
@@ -68,7 +68,7 @@ export class MotionWatcher {
             try {
               onPresent();
             } catch {
-              /* swallow consumer errors */
+
             }
           }
         }
@@ -80,7 +80,7 @@ export class MotionWatcher {
     this.raf = requestAnimationFrame(tick);
   }
 
-  /** Returns mean abs grayscale diff (0..1), or null if the frame isn't ready. */
+
   private sample(video: HTMLVideoElement): number | null {
     if (video.readyState < 2 || video.videoWidth === 0) return null;
     try {
@@ -114,7 +114,7 @@ export class MotionWatcher {
   }
 }
 
-/** Grab a downscaled JPEG data-URL from a video element (for the optional vision route). */
+
 export function grabFrame(video: HTMLVideoElement, maxEdge = 640, quality = 0.7): string | null {
   if (video.readyState < 2 || video.videoWidth === 0) return null;
   const scale = Math.min(1, maxEdge / Math.max(video.videoWidth, video.videoHeight));
